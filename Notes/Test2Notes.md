@@ -107,7 +107,7 @@ When creating a database, you need to define if your table will need nulls or no
 ## Correlating table Names
 ---
 
-## Create Statement with Data Types 
+## Create Statement with Data Types
 ---
 
 ## Picking Correct Data Types
@@ -220,21 +220,65 @@ WHERE
 ---
 
 ## Joins (5 questions)
+
+[Joins are located in another note files](https://github.com/Autoclitic/UVU_IT_Notes/Test2Notes.md)
+
 ---
 
 ## Primary Key
+
+Primary keys are what connects a table to other tables in a database. They cannot be null, and will autoincrement when an INT type is used.
+
+Example ➡️ `[ID] INT PRIMARY KEY`
+
 ---
 
 ## Deleting Table
+
+Deleting a table involves the `DROP` condition.
+
+```
+DROP <TableName> FROM <Database>; 
+```
+
 ---
 
 ## Select Statement
+
+Selects the columns to display from one or more tables.
+
+```
+SELECT
+    *
+FROM <table>
+;
+```
+
 ---
 
 ## Union
+
+Combine two ore more select statements into one query. The query must have a similar number of rows to return.
+
+```
+
+
+```
+
 ---
 
 ## Where Statements
+
+Logical conditioning to filter your queries. You can use logical operators with the where statement.
+
+`WHERE <logic>`
+
+`WHERE Date != '20000101'`
+
+`WHERE Name LIKE 'Bo Jack'`
+
+`WHERE Price >= 40.00 AND Price <= 100.00`
+
 ---
 
 
