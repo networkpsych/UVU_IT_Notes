@@ -68,9 +68,40 @@ ADD AnimalBought VARCHAR(50)
 ---
 
 ## Concatenating Columns
+
+Combine two or more columns to make a single column.
+
+```
+SELECT TOP 3
+    FirstName, LastName, FirstName + ' ' + LastName AS  FullName
+FROM INFO2410_SPS_Brayden_C.dbo.Customer
+;
+```
+
+
+
+|FirstName	|LastName	|Concatenated|
+|-|-|-|
+|Walkin	|Walkin	|Walkin Walkin|
+|Brent	|Cummings|	Brent Cummings|
+|Dwight	|Logan	|Dwight Logan|
+
 ---
 
 ## Conditions and Nulls
+
+Conditions: Logical statements that help filter your query.
+
+`WHERE` and `HAVING` are conditions
+
+Nulls: cells that have no value.
+
+When creating a database, you need to define if your table will need nulls or not based on your clients needs. Primary keys are not allowed to have null values because they are the address to foreign keys on other tables.
+
+`WHERE <value> <boolean logic>`
+
+`HAVING <value> <boolean logic>`
+
 ---
 
 ## Correlating table Names
@@ -80,6 +111,36 @@ ADD AnimalBought VARCHAR(50)
 ---
 
 ## Picking Correct Data Types
+
+Correct data typing is necessary for your database. [You can find more about types here.](https://www.w3schools.com/sql/sql_datatypes.asp)
+
+Types that *might* be on the test
+
+Numeric Data Types:
+* BIT(*size*)
+* BOOL/BOOLEAN
+* INT/INTEGER
+* BIGINT(*size*)
+* FLOAT(*size, digits*)
+* FLOAT(*p*)
+* DOUBLE(*size, digits*)
+* DECIMAL(*size, digits*)
+* MONEY ⬅️ Like a float, but money.
+
+String Data Types:
+* CHAR(n) ⬅️ Max size 8,000 characters
+* VARCHAR(n) ⬅️ Max size 8,000 characters
+* VARCHAR(max) ⬅️ Max size 1,073,741,824 characters
+* NVARCHAR() ⬅️ Max size 4,000 characters
+* NVARCHAR(max) ⬅️ Max size 536,870,912 characters
+
+Date and Time Data Types:
+* DATE
+* DATETIME
+* TIMESTAMP
+* TIME
+* YEAR
+
 ---
 
 ## Data Definition Language (DDL) Statements
@@ -105,16 +166,57 @@ Alters an existing database object
     ALTER TABLE <table> ADD <new object> <object type>
     ALTER TABLE <table> DROP COLUMN <object>
 
-
 ---
 
-## Use of Distinct 
+## Use of Distinct
+
+Distinct is a condition that filters out duplicate values for 
+
+
 ---
 
 ## Qualified Column Statements
+
+Statements that allow the addition, modification, or removal of specific columns on a table.
+
+Conditions:
+* INSERT :arrow_left: *might be on test*
+* UPDATE :arrow_left: *might be on test*
+* MERGE
+* COMMENT
+* LABEL
+
 ---
 
 ## Pattern Matching and wildcard characters
+
+Logical conditions that match a cell based on what your query will be.
+
+Wildcards:
+
+* % ⬅️ Represents zero or more characters
+* _ ⬅️ Represents single characters
+* [] :arrow_left: Represents any single character within brackets.
+* [^] :arrow_left: Represents any character that is not in brackets. 
+* \- ⬅️ Represents any single character within a range.
+
+```
+SELECT TOP 3
+    Name, Breed
+FROM INFO2410_SPS_Brayden_C.dbo.Animal
+WHERE 
+    Name LIKE '%e'
+        AND
+    Breed LIKE '%[ie]%'
+;
+```
+
+|Name	|Breed|
+|-|-|
+|Rosie	|Oriental Shorthair|
+|Jackie	|Doberman|
+|Gene	|Wire Fox Terrier|
+
 ---
 
 ## Joins (5 questions)
