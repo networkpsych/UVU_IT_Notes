@@ -80,7 +80,7 @@ source: *[Visual Representation of SQL Joins by C.L. Moffatt](https://www.codepr
 
 ## **Right Join**
 <span style="color:red"> Right Joins </span> 
-> It is suggested that you don't use Right Joins. It allows for records that you may not be searching for when you do your query.
+> It is suggested that you don't use Right Joins. If you reverse the logic, you can just run a LEFT JOIN.
 * Returns all records from comparison table, even if they do not match the selected table.
 
 ```
